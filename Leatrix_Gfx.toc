@@ -1,0 +1,15 @@
+## Interface: 30300
+## Title: Leatrix Gfx
+## Title-ruRU: Leatrix Gfx Russian
+## Title-esMX: Leatrix Gfx Español
+## Title-ptBR: Leatrix Gfx Portugues
+## Notes: 4 locales PRO - FIX fpscap error
+## Version: 2.15-PRO-FIX
+## Author: Leatrix - Fix GOD
+## SavedVariables: LeaGfxDB, LeaGfxLC
+Locales\enUS.lua
+Locales\ruRU.lua
+Locales\esMX.lua
+Locales\ptBR.lua
+Leatrix_Gfx_User.lua
+Leatrix_Gfx.lua
