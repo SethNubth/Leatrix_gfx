@@ -1,50 +1,107 @@
 
 --                                                                                           --
---                                 Leatrix Gfx User File                                     --
---                                                                                           --
---  This file is for user defined settings. Use it to configure additional                  --
---  CVars and settings not included in the main options panel.                              --
+--                             Leatrix Gfx User Defined Settings                             --
 --                                                                                           --
 
 
-function LeaGfxUserSettings()
+   function LeaGfxUserSettings()
 
-  -- To enable this file, tick "Load user defined settings file" in the /gfx panel.
+     local EnableTheseSettings = 0 ; -- Set to 1 to enable the settings below, 0 to disable
 
-  -- EXAMPLES (remove -- to enable):
+--                                          Settings                                         --
 
-  -- VIDEO
-  -- SetCVar("gxResolution", "1920x1080")
-  -- SetCVar("gxRefresh", "60")
-  -- SetCVar("gxMultisample", "1")
-  -- SetCVar("gxMultisampleQuality", "0.0")
-  -- SetCVar("gxVSync", "0")
-  -- SetCVar("gxTripleBuffer", "0")
-  -- SetCVar("gxFixLag", "0")
-  -- SetCVar("gxCursor", "1")
-  -- SetCVar("hwDetect", "0")
-  -- SetCVar("textureFilteringMode", "0")
-  -- SetCVar("componentTextureLevel", "9")
-  -- SetCVar("terrainMipLevel", "0")
-  -- SetCVar("worldBaseMip", "0")
-  -- SetCVar("environmentDetail", "0.5")
-  -- SetCVar("weatherDensity", "0")
-  -- SetCVar("farclip", "1277")
-  -- SetCVar("nearClip", "0.33")
-  -- SetCVar("shadowLOD", "0")
-  -- SetCVar("smallcull", "0.04")
-  -- SetCVar("distcull", "500.0")
-  -- SetCVar("lod", "0")
-  -- SetCVar("mapShadows", "0")
-  -- SetCVar("detailDoodadAlpha", "0")
-  -- SetCVar("BaseMip", "1")
 
-  -- SOUND
-  -- SetCVar("Sound_EnableSoundWhenGameIsInBG", "1")
-  -- SetCVar("Sound_EnableSFX", "0")
-  -- SetCVar("Sound_EnableAmbience", "0")
-  -- SetCVar("Sound_EnableMusic", "0")
+     if EnableTheseSettings == 1 then
 
-  -- Add your own CVars below this line:
+     -- Video
+     SetCVar("gxRefresh","75")                       ; -- Sets the refresh rate
+     SetCVar("gxMultisample", "1")                   ; -- Disables multisampling
+     SetCVar("gxresolution","800x600")               ; -- Sets game resolution
+     SetCVar("gxVSync","0")                          ; -- Disables vertical sync
+     SetCVar("gxTripleBuffer","0")                   ; -- Disables triple buffering
+     SetCVar("gxFixLag","0")                         ; -- Disable reduce input lag
+     SetCVar("gxCursor","1")                         ; -- Enable hardware cursor
+     SetCVar("ffxDeath", "0")                        ; -- Disable death effect
+     SetCVar("ffxGlow", "0")                         ; -- Disable screen glow effect
+     SetCVar("specular", "0")                        ; -- Disable specular lighting
+     SetCVar("projectedtextures","0")                ; -- Disable projected textures
 
+     -- Sound
+     SetCVar("Sound_EnableSoundWhenGameIsInBG", "1") ; -- Enable sound in background
+     SetCVar("Sound_EnableAmbience", "0")            ; -- Disable ambient sounds
+     SetCVar("Sound_EnablePetSounds", "0")           ; -- Disable pet sounds
+     SetCVar("Sound_EnableMusic", "0")               ; -- Disable music
+     SetCVar("Sound_OutputQuality", "0")             ; -- Use low sound quality
+     SetCVar("Sound_EnableErrorSpeech", "0")         ; -- Disable error speech
+     SetCVar("Sound_EnableDSPEffects", "0")          ; -- Disable voice modulation effects
+
+     -- Controls
+     SetCVar("deselectOnClick", "0")                 ; -- Enable sticky targeting
+     SetCVar("autoLootDefault", "1")                 ; -- Enable autoloot
+
+     -- Combat
+     SetCVar("showTargetOfTarget", "1")              ; -- Always show target of target
+
+     -- Display
+     SetCVar("displayWorldPVPObjectives", "1")       ; -- Always display world PVP objectives
+     SetCVar("threatWarning", "3")                   ; -- Always show aggro warning
+     SetCVar("threatShowNumeric", "1")               ; -- Show aggro as percentage
+     SetCVar("showItemLevel", "1")                   ; -- Show item level
+
+     -- Objectives
+     SetCVar("questFadingDisable", "1")              ; -- Enable instant quest text
+     SetCVar("autoQuestWatch", "0")                  ; -- Disable automatic quest tracking
+
+     -- Social
+     SetCVar("profanityFilter", "0")                 ; -- Disable mature language filter
+     SetCVar("chatBubbles", "0")                     ; -- Disable chat bubbles
+     SetCVar("chatBubblesParty", "0")                ; -- Disable party chat bubbles
+     SetCVar("spamFilter", "0")                      ; -- Disable spam filter
+     SetCVar("guildMemberNotify", "1")               ; -- Enable guild member alert
+     SetCVar("guildRecruitmentChannel", "0")         ; -- Disable guild recruitment channel
+
+     -- Actionbars
+     SetCVar("lockActionBars", "1")                  ; -- Lock Action bars
+     SetCVar("secureAbilityToggle", "1")             ; -- Enable secure ability toggle
+
+     -- Names
+     SetCVar("UnitNameOwn", "0")                     ; -- Don't show player name
+     SetCVar("UnitNameNPC", "0")                     ; -- Don't show NPC names
+     SetCVar("UnitNameCompanionName", "0")           ; -- Don't show companion names  
+     SetCVar("UnitNamePlayerGuild", "0")             ; -- Don't show guild names
+     SetCVar("UnitNamePlayerPVPTitle", "0")          ; -- Don't show titles
+     SetCVar("UnitNameFriendlyPlayerName", "0")      ; -- Don't show friendly player names
+     SetCVar("UnitNameFriendlyPetName", "0")         ; -- Don't show friendly pet names
+     SetCVar("UnitNameFriendlyCreationName", "0")    ; -- Don't show friendly creation names
+     SetCVar("UnitNameEnemyPlayerName", "0")         ; -- Don't show enemy player names
+     SetCVar("UnitNameEnemyPetName", "0")            ; -- Don't show enemy pet names
+     SetCVar("UnitNameEnemyCreationName", "0")       ; -- Don't show enemy companion names
+
+     -- Status Text
+     SetCVar("playerStatusText", "1")                ; -- Show player status text
+     SetCVar("petStatusText", "0")                   ; -- Don't show pet status text
+     SetCVar("partyStatusText", "0")                 ; -- Don't show party status text
+     SetCVar("targetStatusText", "1")                ; -- Show target status text
+     SetCVar("statusTextPercentage", "1")            ; -- Show status text as percentage
+
+     -- Unit Frames
+     SetCVar("showPartyBackground", "1")             ; -- Show party background
+     SetCVar("hidePartyInRaid", "1")                 ; -- Hide party interface in raid
+     SetCVar("partyBackgroundOpacity", "0.0")        ; -- Party background opacity
+ 
+     -- Features
+     SetCVar("previewTalents", "1")                  ; -- Enable preview talent changes
+
+     -- Help
+     SetCVar("gameTip", "0")                         ; -- Disable tutorials
+     SetCVar("showGameTips", "0")                    ; -- Hide loading screen tips
+     SetCVar("showNewbieTips", "0")                  ; -- Hide beginner tooltips
+     SetCVar("UberTooltips", "1")                    ; -- Show enhanced tooltips
+
+--                                         Confirmation                                      --
+
+
+     -- Display confirmation message
+     DEFAULT_CHAT_FRAME:AddMessage("Leatrix Gfx user settings loaded successfully.", 1.0,0.85,0.0)
+     end
 end
